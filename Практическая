@@ -1,0 +1,63 @@
+# Запрашиваем список чисел от пользователя
+numbers = input("Введите список чисел через пробел: ").split()
+numbers = [int(num) for num in numbers]
+
+# Выводим наибольшее и наименьшее число
+max_num = max(numbers)
+min_num = min(numbers)
+print(f"Наибольшее число: {max_num}")
+print(f"Наименьшее число: {min_num}")
+
+# Создаем список слов и сортируем его
+word_list = input("Введите список слов через пробел: ").split()
+word_list.sort()
+print("Список слов в алфавитном порядке:", word_list)
+
+# Создаем словарь студентов и их оценок
+student_grades = {
+    "Иван": 85,
+    "Мария": 92,
+    "Петр": 78,
+    "Анна": 95,
+}
+
+# Преобразуем словарь в список кортежей (имя, оценка)
+tuple_list = [(name, grade) for name, grade in student_grades.items()]
+print("Список кортежей (имя, оценка):", tuple_list)
+
+# Считываем текст от пользователя
+text = input("Введите текст: ")
+# Разбиваем текст на слова и находим уникальные слова
+unique_words = set(text.split())
+print("Уникальные слова в тексте:", unique_words)
+
+# Создаем два множества
+set1 = {1, 2, 3, 4, 5}
+set2 = {3, 4, 5, 6, 7}
+
+# Находим пересечение множеств
+intersection = set1.intersection(set2)
+print("Общие элементы двух множеств:", intersection)
+
+# Создаем словарь с сотрудниками компании
+employees = {
+    1: "Иванов",
+    2: "Петров",
+    3: "Сидоров",
+}
+
+# Функция для вывода списка сотрудников
+def print_employees(employees_dict):
+    print("Список сотрудников:")
+    for employee_id, employee_name in employees_dict.items():
+        print(f"ID: {employee_id}, Имя: {employee_name}")
+
+# Добавляем новых сотрудников
+employees[4] = "Козлов"
+employees[5] = "Антонов"
+
+# Удаляем уволенного сотрудника
+del employees[2]
+
+# Выводим список всех сотрудников
+print_employees(employees)
